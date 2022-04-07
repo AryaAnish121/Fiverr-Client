@@ -5,7 +5,7 @@ const chalk = require('chalk');
 
 // config
 
-const username = 'traversymedia';
+const username = 'fredrikeklundny';
 const message = 'Hello';
 const dms = 30;
 
@@ -105,7 +105,7 @@ const massDm = (ids) => {
     for (let i = 0; i < ids.length; i++) {
       const id = ids[i];
       if (i !== 0) {
-        await page.waitForTimeout(i * 7500);
+        await page.waitForTimeout(i * 3000);
       }
       await page.goto('https://www.instagram.com/direct/new/');
       await page.type('input.j_2Hd', id);
