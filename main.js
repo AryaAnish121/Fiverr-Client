@@ -105,7 +105,7 @@ const massDm = (ids) => {
     for (let i = 0; i < ids.length; i++) {
       const id = ids[i];
       if (i !== 0) {
-        await page.waitForTimeout(i * 3000);
+        await page.waitForTimeout(i * 2500);
       }
       await page.goto('https://www.instagram.com/direct/new/');
       await page.type('input.j_2Hd', id);
@@ -124,6 +124,7 @@ const massDm = (ids) => {
       }, userSelector);
       try {
         await page.click(nextButton);
+        await page.waitForNavigation();
         await page.waitForTimeout(2000);
         await page.type(inputPath, message);
         await page.click(sendPath);
